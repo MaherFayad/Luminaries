@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: "Outfit", sans-serif;
+    @apply bg-[#030712] text-white;
+  }
+
+  /* ── Arabic / RTL typography ────────────────────────── */
+  [dir="rtl"] body {
+    font-family: "Cairo", "Noto Sans Arabic", sans-serif;
+    letter-spacing: 0;
+  }
+  [dir="rtl"] h1,
+  [dir="rtl"] h2,
+  [dir="rtl"] h3,
+  [dir="rtl"] h4 {
+    font-family: "Cairo", sans-serif;
+    letter-spacing: 0;
+    line-height: 1.5;
+  }
+}
+
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 120s linear infinite;
+}
+
+.font-navbar {
+  font-family: "Outfit", sans-serif !important;
+  font-weight: 900 !important;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+[dir="rtl"] .font-navbar {
+  font-family: "Cairo", sans-serif !important;
+  letter-spacing: 0 !important;
+}
+
+/* ── RTL utilities ────────────────────────────────────── */
+.rtl-flip {
+  display: inline-block;
+}
+[dir="rtl"] .rtl-flip {
+  transform: scaleX(-1);
+}
+
+@keyframes gradient-flow {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient-flow 5s ease infinite;
+}
+
+section {
+  position: relative;
+  overflow: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  scroll-padding-top: 90px;
+}
+
+@layer utilities {
+  @keyframes shimmer {
+    100% {
+      transform: translateX(100%);
+    }
+  }
+}
