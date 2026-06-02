@@ -41,3 +41,4 @@ Perfect for SaaS startups, AI tech companies, and modern digital agencies.
 4. run the website:
    npm run dev
 # Luminaries
+# Luminaries
