@@ -78,7 +78,7 @@ const ExploreGrid = () => {
         <h3 className="text-white font-bold text-xl mb-4" style={{ fontFamily: '"Sora", sans-serif' }}>
           {t("explore.browse_title")}
         </h3>
-        <div className="flex flex-wrap items-center justify-center gap-3">
+        <div className={`flex flex-wrap gap-3 ${isRTL ? "justify-end" : "justify-center"}`} dir={isRTL ? "rtl" : "ltr"}>
           {categories.map((cat) => (
             <button
               key={cat.key}
@@ -155,21 +155,12 @@ const ExploreGrid = () => {
                     </p>
                   </div>
 
-                  <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
+                  <div>
                     <button
                       onClick={(e) => { e.stopPropagation(); ln("/contactus"); }}
-                      className="flex-1 bg-white text-black py-2.5 rounded-xl text-xs font-bold hover:bg-[#3496ed] hover:text-white transition-colors"
+                      className="w-full bg-white text-black py-2.5 rounded-xl text-xs font-bold hover:bg-[#3496ed] hover:text-white transition-colors"
                     >
                       {t("explore.contact_btn")}
-                    </button>
-                    <button
-                      onClick={(e) => e.stopPropagation()}
-                      className="w-10 h-10 bg-white/10 hover:bg-white/20 backdrop-blur-md rounded-xl flex items-center justify-center text-white transition-colors border border-white/10"
-                      aria-label="Save"
-                    >
-                      <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-8l-4-4m0 0L8 8m4-4v12" />
-                      </svg>
                     </button>
                   </div>
                 </div>

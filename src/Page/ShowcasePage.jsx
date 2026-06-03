@@ -20,7 +20,7 @@ const PartnerBanner = () => {
         <div className="absolute inset-0 bg-gradient-to-r from-[#1a76d2]/5 to-[#f59e0b]/5 pointer-events-none opacity-50 group-hover:opacity-100 transition-opacity" />
         <div className="absolute inset-0 opacity-10 bg-[radial-gradient(#3496ed_1px,transparent_1px)] [background-size:20px_20px] pointer-events-none" />
 
-        <div className="relative z-10 md:max-w-xl text-center md:text-left">
+        <div className="relative z-10 md:max-w-xl text-center md:text-start">
           <span className="text-[#59b4f5] uppercase text-[10px] tracking-[0.3em] font-bold mb-3 block">
             {t("showcase_page.banner_label")}
           </span>
