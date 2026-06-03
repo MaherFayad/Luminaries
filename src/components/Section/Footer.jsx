@@ -1,25 +1,29 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
+import { useLp } from "../../hooks/useLp";
 import logoFull from "../../assets/Logo.svg";
 
 const Footer = () => {
   const { t } = useTranslation();
+  const lp = useLp();
 
   const menuConfig = {
     [t("footer.explore_title")]: [
-      { name: t("footer.explore_1"), path: "/services" },
-      { name: t("footer.explore_2"), path: "/services" },
-      { name: t("footer.explore_3"), path: "/services" },
+      { name: t("footer.explore_1"), path: lp("/services/it-outsourcing") },
+      { name: t("footer.explore_2"), path: lp("/services/recruitment") },
+      { name: t("footer.explore_3"), path: lp("/services/professional") },
+      { name: t("footer.explore_4"), path: lp("/services/mena-presence") },
     ],
     [t("footer.product_title")]: [
-      { name: t("footer.product_1"), path: "/industries" },
-      { name: t("footer.product_2"), path: "/industries" },
-      { name: t("footer.product_3"), path: "/industries" },
+      { name: t("footer.product_1"), path: lp("/industries/banking") },
+      { name: t("footer.product_2"), path: lp("/industries/fintech") },
+      { name: t("footer.product_3"), path: lp("/industries/government") },
+      { name: t("footer.product_4"), path: lp("/industries/software") },
     ],
     [t("footer.company_title")]: [
-      { name: t("footer.company_1"), path: "/about" },
-      { name: t("footer.company_3"), path: "/contactus" },
+      { name: t("footer.company_1"), path: lp("/about") },
+      { name: t("footer.company_3"), path: lp("/contactus") },
     ],
   };
 
@@ -32,7 +36,7 @@ const Footer = () => {
         {/* Brand Section */}
         <div className="col-span-2 flex flex-col items-center md:items-start text-center md:text-start">
           <Link
-            to="/"
+            to={lp("/")}
             onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}
             className="inline-flex items-center mb-6 group"
           >

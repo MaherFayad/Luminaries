@@ -1,6 +1,7 @@
 import React, { useMemo } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import { useLp } from "../hooks/useLp";
 
 // --- SUB-COMPONENT: Button Particles ---
 const ButtonParticles = () => {
@@ -41,6 +42,7 @@ const ButtonParticles = () => {
 
 // --- MAIN COMPONENT ---
 const SeeMoreButton = ({ to, text = "View All Service" }) => {
+  const lp = useLp();
   return (
     <motion.div
       initial={{ opacity: 0, y: 20 }}
@@ -49,7 +51,7 @@ const SeeMoreButton = ({ to, text = "View All Service" }) => {
       transition={{ duration: 0.6, delay: 0.2 }}
       className="mt-12 w-full"
     >
-      <Link to={to} className="block w-full">
+      <Link to={lp(to)} className="block w-full">
         <button className="group relative w-full h-12 md:h-14 rounded-full border border-white/20 bg-transparent overflow-hidden flex items-center justify-center transition-all active:scale-95 hover:border-transparent">
           {/* Animated Liquid Wave Layer */}
           <div className="absolute top-full left-1/2 w-[1200px] h-[1200px] -translate-x-1/2 group-hover:top-[-500px] transition-all duration-[1.2s] ease-[cubic-bezier(0.25,1,0.5,1)] z-0 pointer-events-none">

@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 import { Code2, ShieldCheck, Lightbulb, ArrowRight } from "lucide-react";
 import { premiumAppear } from "../../utils/animations";
@@ -51,7 +51,7 @@ const pillars = {
 
 export default function ProfessionalServicesPage() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
   const isRTL = i18n.language === "ar";
   const data = isRTL ? pillars.ar : pillars.en;
 
@@ -81,7 +81,7 @@ export default function ProfessionalServicesPage() {
                 : "We support organisations through end-to-end technical services that enhance product quality, system performance, and operational efficiency."}
             </p>
             <button
-              onClick={() => navigate("/contactus")}
+              onClick={() => ln("/contactus")}
               className="inline-flex items-center gap-3 bg-[#1a76d2] hover:bg-[#3496ed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-[#1a76d2]/25"
             >
               {isRTL ? "ناقش متطلباتك" : "Discuss Your Requirements"}

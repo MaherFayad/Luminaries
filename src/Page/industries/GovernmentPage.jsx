@@ -2,46 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
-import { Landmark, ArrowRight } from "lucide-react";
+import { Building2, ArrowRight } from "lucide-react";
 import { premiumAppear } from "../../utils/animations";
 import CTA from "../../components/Section/CTA";
 
 const content = {
   en: {
-    eyebrow: "Banking & Financial Services",
-    heading: "Precision talent for", accent: "compliance-critical environments.",
-    desc: "Banking organisations demand technical talent that understands regulatory frameworks, security requirements, and the operational reliability standards that protect customer trust.",
+    eyebrow: "Government & Enterprise",
+    heading: "Structured delivery for ", accent: "mission-critical programmes.",
+    desc: "Government and large enterprise organisations require technical talent with a unique combination of reliability, security clearance readiness, and the ability to work within structured governance frameworks.",
     challengesTitle: "Challenges We Solve",
     challenges: [
-      { t: "Compliance & Regulatory Complexity",     d: "Sourcing engineers who understand local and international regulatory environments (SAMA, CBE, CBUAE)." },
-      { t: "Legacy System Modernisation",             d: "Teams capable of working within and migrating away from legacy core banking infrastructure." },
-      { t: "Security-First Engineering",              d: "Professionals with bank-grade security standards built into their practice." },
-      { t: "Time-Critical Hiring",                    d: "Delivering qualified talent within 5 working days to keep product timelines intact." },
+      { t: "Structured Governance",          d: "Engineers who understand public-sector delivery frameworks, procurement processes, and documentation standards." },
+      { t: "Legacy Modernisation at Scale",  d: "Teams experienced in migrating and extending mission-critical legacy government systems." },
+      { t: "Data Security & Sovereignty",    d: "Specialists who work within national data residency and sovereignty requirements." },
+      { t: "Long-Term Programme Staffing",   d: "Stable, committed talent for multi-year digital transformation programmes." },
     ],
     capTitle: "Key Capabilities",
-    caps: ["Core Banking System Engineers", "Compliance & RegTech Talent", "Cybersecurity Specialists", "Data & Analytics Teams", "Mobile Banking Developers", "QA & Testing Professionals"],
-    caseTitle: "Case Study", caseLabel: "AlBilad Bank",
-    caseText: "Deployed a 6-person Testing as a Service squad within 10 days, reducing regression cycle time by 60% across 3 consecutive product releases. All engineers passed internal security and compliance clearance on first attempt.",
+    caps: ["Digital Transformation Programmes", "Legacy System Modernisation", "e-Government Portal Development", "Data Governance Specialists", "Cloud & Infrastructure Engineers", "Programme Managers"],
+    caseTitle: "Case Study", caseLabel: "Saudi Digital Authority",
+    caseText: "Provided 8 senior engineers and a dedicated technical lead for a 6-month government digitization initiative. Full HR outsourcing model applied — covering payroll, compliance, and security administration. Delivered on time and within scope.",
   },
   ar: {
-    eyebrow: "الخدمات المصرفية والمالية",
-    heading: "كفاءات دقيقة في ", accent: "البيئات الحساسة للامتثال.",
-    desc: "تتطلب المؤسسات المصرفية كفاءات تقنية تفهم الأطر التنظيمية ومتطلبات الأمان ومعايير الموثوقية التشغيلية التي تحمي ثقة العملاء.",
+    eyebrow: "الحكومة والمؤسسات الكبرى",
+    heading: "تسليم منظم لـ", accent: "البرامج الحيوية.",
+    desc: "تتطلب المؤسسات الحكومية والمؤسسات الكبرى كفاءات تقنية تجمع بين الموثوقية والاستعداد للتخليص الأمني والقدرة على العمل ضمن أطر الحوكمة المنظمة.",
     challengesTitle: "التحديات التي نحلها",
     challenges: [
-      { t: "تعقيد الامتثال والتنظيم",               d: "توريد مهندسين يفهمون البيئات التنظيمية المحلية والدولية (سامة، البنك المركزي المصري)." },
-      { t: "تحديث الأنظمة القديمة",                 d: "فرق قادرة على العمل ضمن البنية التحتية الأساسية للبنوك القديمة والترحيل منها." },
-      { t: "هندسة الأمان أولاً",                    d: "متخصصون يطبقون معايير الأمان المصرفي في ممارساتهم الهندسية." },
-      { t: "توظيف في أوقات حرجة",                   d: "تسليم كفاءات مؤهلة خلال 5 أيام عمل للحفاظ على الجداول الزمنية للمنتجات." },
+      { t: "الحوكمة المنظمة",                   d: "مهندسون يفهمون أطر تسليم القطاع العام وعمليات المشتريات ومعايير التوثيق." },
+      { t: "تحديث الأنظمة القديمة على نطاق واسع", d: "فرق ذات خبرة في ترحيل وتوسيع أنظمة حكومية حيوية قديمة." },
+      { t: "أمان البيانات والسيادة عليها",       d: "متخصصون يعملون ضمن متطلبات إقامة البيانات الوطنية وسيادتها." },
+      { t: "التوظيف الدائم للبرامج الطويلة",     d: "كفاءات ثابتة وملتزمة لبرامج التحول الرقمي متعددة السنوات." },
     ],
     capTitle: "القدرات الرئيسية",
-    caps: ["مهندسو أنظمة البنوك الأساسية", "كفاءات الامتثال وRegTech", "متخصصو الأمن السيبراني", "فرق البيانات والتحليلات", "مطورو تطبيقات الصيرفة المتنقلة", "متخصصو QA والاختبار"],
-    caseTitle: "قصة نجاح", caseLabel: "بنك البلاد",
-    caseText: "نشر فريق TaaS من 6 أشخاص خلال 10 أيام، مما قلّص دورة الاختبار الانحداري بنسبة 60% عبر 3 إصدارات متتالية. اجتاز جميع المهندسين تخليص الأمان والامتثال الداخلي من أول محاولة.",
+    caps: ["برامج التحول الرقمي", "تحديث الأنظمة القديمة", "تطوير بوابات الحكومة الإلكترونية", "متخصصو حوكمة البيانات", "مهندسو السحابة والبنية التحتية", "مديرو البرامج"],
+    caseTitle: "قصة نجاح", caseLabel: "هيئة الحكومة الرقمية السعودية",
+    caseText: "تزويد 8 مهندسين كبار وقائد تقني متخصص لمبادرة رقمنة حكومية مدتها 6 أشهر. تطبيق نموذج استعانة HR كامل — يشمل الرواتب والامتثال وإدارة الأمان. سُلِّمت في الوقت المحدد وضمن النطاق المحدد.",
   },
 };
 
-export default function BankingPage() {
+export default function GovernmentPage() {
   const { i18n } = useTranslation();
   const ln = useLn();
   const isRTL = i18n.language === "ar";
@@ -51,10 +51,10 @@ export default function BankingPage() {
     <div className="bg-[#030712] min-h-screen">
       <section className="pt-40 pb-20 px-7 md:px-10 relative overflow-hidden">
         <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[900px] h-[600px] bg-[#1a76d2]/12 blur-[140px] rounded-full pointer-events-none" />
-        <div className="max-w-6xl mx-auto relative z-10 flex flex-col md:flex-row items-start gap-10">
-          <motion.div {...premiumAppear} className="flex-1">
+        <div className="max-w-6xl mx-auto relative z-10">
+          <motion.div {...premiumAppear} className="max-w-3xl">
             <div className="w-16 h-16 rounded-2xl bg-[#1a76d2]/15 border border-[#1a76d2]/25 flex items-center justify-center mb-8">
-              <Landmark className="w-8 h-8 text-[#59b4f5]" strokeWidth={1.5} />
+              <Building2 className="w-8 h-8 text-[#59b4f5]" strokeWidth={1.5} />
             </div>
             <span className="text-[#59b4f5] uppercase text-xs tracking-[0.4em] font-bold mb-4 block">{c.eyebrow}</span>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-[1.05]" style={{ fontFamily: '"Sora", sans-serif' }}>

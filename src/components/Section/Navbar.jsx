@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
-import { useLocation, Link } from "react-router-dom";
+import { useLocation, Link, useNavigate } from "react-router-dom";
 import { HashLink } from "react-router-hash-link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { setLanguage } from "../../i18n";
+import { useLp } from "../../hooks/useLp";
 import logoFull from "../../assets/Logo.svg";
 import logoIcon from "../../assets/Logo-Icon.svg";
 
@@ -29,16 +30,29 @@ const itemVariants = {
 // --- LANGUAGE SWITCHER ---
 const LangToggle = () => {
   const { i18n } = useTranslation();
+  const navigate = useNavigate();
+  const { pathname } = useLocation();
   const isAr = i18n.language === "ar";
+
+  const toggle = () => {
+    const newLang = isAr ? "en" : "ar";
+    setLanguage(newLang);
+    // Swap /en ↔ /ar in the current URL path
+    const newPath = isAr
+      ? pathname.replace(/^\/ar/, "/en")
+      : pathname.replace(/^\/en/, "/ar");
+    navigate(newPath, { replace: true });
+  };
+
   return (
     <button
-      onClick={() => setLanguage(isAr ? "en" : "ar")}
+      onClick={toggle}
       aria-label="Toggle language"
       className="flex items-center gap-1 px-3 py-1.5 rounded-lg border border-white/15 bg-white/5 hover:bg-white/10 text-[11px] font-bold tracking-wider text-slate-300 hover:text-white transition-all"
     >
       <span className={isAr ? "opacity-40" : "opacity-100"}>EN</span>
       <span className="text-white/20 mx-0.5">|</span>
-      <span className={`font-arabic ${isAr ? "opacity-100" : "opacity-40"}`}>عر</span>
+      <span className={`font-arabic ${isAr ? "opacity-100" : "opacity-40"}`}>عربي</span>
     </button>
   );
 };
@@ -47,6 +61,7 @@ const LangToggle = () => {
 const Navbar = () => {
   const location = useLocation();
   const { t } = useTranslation();
+  const lp = useLp();
   const [isOpen, setIsOpen] = useState(false);
   const [isScrolled, setIsScrolled] = useState(false);
 
@@ -56,7 +71,7 @@ const Navbar = () => {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const checkIsActive = (path) => location.pathname === path;
+  const checkIsActive = (path) => location.pathname === lp(path);
 
   const navLinks = [
     { name: t("nav.home"),       path: "/" },
@@ -76,7 +91,7 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
         {/* BRANDING */}
         <div className="flex-1">
-          <Link to="/" className="inline-flex items-center group relative z-[1001]">
+          <Link to={lp("/")} className="inline-flex items-center group relative z-[1001]">
             <img
               src={logoFull}
               alt="Luminaries Hub"
@@ -91,7 +106,7 @@ const Navbar = () => {
             <HashLink
               smooth
               key={link.path}
-              to={link.path}
+              to={lp(link.path)}
               className={`text-[14px] font-medium tracking-wide transition-colors whitespace-nowrap ${
                 checkIsActive(link.path)
                   ? "text-[#59b4f5]"
@@ -106,7 +121,7 @@ const Navbar = () => {
         {/* DESKTOP CTA */}
         <div className="hidden md:flex items-center justify-end flex-1 gap-3">
           <LangToggle />
-          <Link to="/contactus">
+          <Link to={lp("/contactus")}>
             <button className="px-6 py-2.5 bg-[#1a76d2] text-white rounded-xl text-[12px] font-bold uppercase tracking-widest hover:bg-[#3496ed] transition-all shadow-lg shadow-[#1a76d2]/20">
               {t("nav.cta")}
             </button>
@@ -138,7 +153,7 @@ const Navbar = () => {
                 <motion.div key={link.path} variants={itemVariants}>
                   <HashLink
                     smooth
-                    to={link.path}
+                    to={lp(link.path)}
                     onClick={() => setIsOpen(false)}
                     className={`block w-full px-4 py-4 rounded-xl text-lg font-bold tracking-wide transition-colors ${
                       checkIsActive(link.path)
@@ -158,7 +173,7 @@ const Navbar = () => {
 
               {/* MOBILE CTA */}
               <motion.div variants={itemVariants} className="mt-4 pt-6 border-t border-white/10">
-                <Link to="/contactus" onClick={() => setIsOpen(false)} className="block w-full">
+                <Link to={lp("/contactus")} onClick={() => setIsOpen(false)} className="block w-full">
                   <button className="w-full py-4 bg-[#1a76d2] text-white rounded-xl text-[13px] font-bold uppercase tracking-widest hover:bg-[#3496ed] transition-colors">
                     {t("nav.cta")}
                   </button>

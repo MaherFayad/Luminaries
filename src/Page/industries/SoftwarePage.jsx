@@ -2,46 +2,46 @@ import React from "react";
 import { motion } from "framer-motion";
 import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
-import { Zap, ArrowRight } from "lucide-react";
+import { Monitor, ArrowRight } from "lucide-react";
 import { premiumAppear } from "../../utils/animations";
 import CTA from "../../components/Section/CTA";
 
 const content = {
   en: {
-    eyebrow: "Fintech",
-    heading: "High-velocity talent for ", accent: "fast-moving fintech teams.",
-    desc: "Fintech organisations move fast. They need engineers who can hit the ground running, scale their platform, and ship features without operational friction slowing them down.",
+    eyebrow: "Software & Technology",
+    heading: "Scale your engineering team ", accent: "without the overhead.",
+    desc: "Software companies and technology startups need to scale fast while maintaining product quality. We give you access to pre-vetted engineers who can plug directly into your delivery squads.",
     challengesTitle: "Challenges We Solve",
     challenges: [
-      { t: "Speed to Market",              d: "Placing qualified engineers within 5 working days so your roadmap doesn't wait on hiring." },
-      { t: "Payments Expertise",           d: "Sourcing specialists in payment infrastructure, wallet technology, and open banking APIs." },
-      { t: "Compliance in Motion",         d: "Engineers who understand Central Bank regulations while still shipping fast." },
-      { t: "Product & UX at Scale",        d: "Design and product talent who work within agile delivery environments." },
+      { t: "Rapid Team Scaling",         d: "Going from 5 to 50 engineers in months, not years, without compromising culture or code quality." },
+      { t: "Full-Stack Versatility",     d: "Frontend, backend, mobile, DevOps, cloud — we source across the entire engineering stack." },
+      { t: "Agile Integration",          d: "Engineers experienced in sprint-based delivery who integrate into your existing rituals from day one." },
+      { t: "QA at Velocity",             d: "Testing professionals who keep up with fast release cycles without creating bottlenecks." },
     ],
     capTitle: "Key Capabilities",
-    caps: ["Payment Infrastructure Engineers", "Mobile Wallet Developers", "API Integration Specialists", "Product & UX Teams", "Compliance Engineers", "Data Science & Analytics"],
-    caseTitle: "Case Studies", caseLabel: "Cairo Fintech & FinEdge",
-    caseText: "Placed 12 full-stack engineers at Cairo Fintech over 3 months enabling 2 new payment feature launches on schedule. Separately, delivered 8 qualified backend engineers for FinEdge Saudi Arabia within 3 weeks — all passing technical screening on first attempt.",
+    caps: ["Full-Stack Development Teams", "DevOps & Cloud Engineers", "QA & Test Automation", "Agile Delivery Squads", "Mobile (iOS & Android)", "Data Engineering"],
+    caseTitle: "Case Study", caseLabel: "Riyadh Tech Ventures",
+    caseText: "Scaled an engineering team from 5 to 22 developers in a single quarter using the IT Outsourcing model. All team members were integrated into the client's existing sprint process within the first week. Retention rate: 100% across the engagement.",
   },
   ar: {
-    eyebrow: "التكنولوجيا المالية",
-    heading: "كفاءات عالية السرعة لـ", accent: "فرق الفينتك المتحركة بسرعة.",
-    desc: "تتحرك مؤسسات الفينتك بسرعة. تحتاج إلى مهندسين قادرين على البدء فوراً وتوسيع منصتهم وشحن المميزات دون احتكاك تشغيلي يعيقهم.",
+    eyebrow: "البرمجيات والتقنية",
+    heading: "وسّع فريق هندستك ", accent: "بدون الأعباء التشغيلية.",
+    desc: "تحتاج شركات البرمجيات والشركات الناشئة إلى التوسع بسرعة مع الحفاظ على جودة المنتج. نمنحك وصولاً إلى مهندسين مُفرَّزين مسبقاً يمكنهم الانضمام مباشرة إلى فرق تسليمك.",
     challengesTitle: "التحديات التي نحلها",
     challenges: [
-      { t: "السرعة في الوصول إلى السوق",   d: "توظيف مهندسين مؤهلين خلال 5 أيام عمل حتى لا تنتظر خارطة طريقك عملية التوظيف." },
-      { t: "خبرة المدفوعات",                d: "توريد متخصصين في البنية التحتية للمدفوعات وتقنية المحافظ وواجهات برمجة البنوك المفتوحة." },
-      { t: "الامتثال في الحركة",            d: "مهندسون يفهمون لوائح البنوك المركزية مع الاستمرار في الشحن بسرعة." },
-      { t: "المنتج وتجربة المستخدم على نطاق واسع", d: "كفاءات التصميم والمنتج التي تعمل ضمن بيئات التسليم الرشيق." },
+      { t: "التوسع السريع للفريق",          d: "الانتقال من 5 إلى 50 مهندساً في أشهر وليس سنوات دون المساومة على الثقافة أو جودة الكود." },
+      { t: "التنوع التقني الشامل",           d: "واجهات أمامية وخلفية وجوال و DevOps وسحابة — نوفر عبر المكدس الهندسي بأكمله." },
+      { t: "التكامل الرشيق",                 d: "مهندسون ذوو خبرة في التسليم المبني على السبرينت يندمجون في طقوسك الحالية من اليوم الأول." },
+      { t: "ضمان الجودة بالسرعة المطلوبة",  d: "متخصصو الاختبار الذين يواكبون دورات الإصدار السريعة دون إحداث اختناقات." },
     ],
     capTitle: "القدرات الرئيسية",
-    caps: ["مهندسو البنية التحتية للمدفوعات", "مطورو المحافظ الرقمية", "متخصصو تكامل API", "فرق المنتج وتجربة المستخدم", "مهندسو الامتثال", "علوم البيانات والتحليلات"],
-    caseTitle: "قصص نجاح", caseLabel: "كايرو فينتك وفين إيدج",
-    caseText: "توظيف 12 مهندساً متكاملاً في كايرو فينتك على مدى 3 أشهر مما أتاح إطلاق ميزتَي دفع جديدتَين في الموعد المحدد. وبشكل منفصل، تسليم 8 مهندسين خلفيين مؤهلين لشركة FinEdge السعودية خلال 3 أسابيع — اجتازوا جميعاً الفرز التقني من أول محاولة.",
+    caps: ["فرق التطوير المتكاملة", "مهندسو DevOps والسحابة", "اختبار الجودة والأتمتة", "فرق التسليم الرشيق", "تطوير الجوال (iOS وAndroid)", "هندسة البيانات"],
+    caseTitle: "قصة نجاح", caseLabel: "رياض تك فنتشرز",
+    caseText: "توسيع الفريق الهندسي من 5 إلى 22 مطوراً في ربع سنوي واحد باستخدام نموذج الاستعانة بمصادر خارجية. اندمج جميع أعضاء الفريق في عملية السبرينت الحالية للعميل خلال الأسبوع الأول. معدل الاحتفاظ: 100% طوال فترة التعاون.",
   },
 };
 
-export default function FintechPage() {
+export default function SoftwarePage() {
   const { i18n } = useTranslation();
   const ln = useLn();
   const isRTL = i18n.language === "ar";
@@ -54,7 +54,7 @@ export default function FintechPage() {
         <div className="max-w-6xl mx-auto relative z-10">
           <motion.div {...premiumAppear} className="max-w-3xl">
             <div className="w-16 h-16 rounded-2xl bg-[#f59e0b]/15 border border-[#f59e0b]/25 flex items-center justify-center mb-8">
-              <Zap className="w-8 h-8 text-[#fbbf24]" strokeWidth={1.5} />
+              <Monitor className="w-8 h-8 text-[#fbbf24]" strokeWidth={1.5} />
             </div>
             <span className="text-[#fbbf24] uppercase text-xs tracking-[0.4em] font-bold mb-4 block">{c.eyebrow}</span>
             <h1 className="text-5xl md:text-6xl font-bold text-white mb-8 tracking-tighter leading-[1.05]" style={{ fontFamily: '"Sora", sans-serif' }}>

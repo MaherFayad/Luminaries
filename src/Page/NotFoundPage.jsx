@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
+import { useLp } from "../hooks/useLp";
 
 // --- MAIN PAGE COMPONENT ---
 
 const NotFoundPage = () => {
+  const lp = useLp();
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
@@ -100,7 +102,7 @@ const NotFoundPage = () => {
           </p>
 
           {/* Action Call */}
-          <Link to="/">
+          <Link to={lp("/")}>
             <button className="group relative inline-flex items-center gap-3 px-8 py-3.5 md:px-10 md:py-4 bg-white text-black font-bold text-xs md:text-sm rounded-full overflow-hidden transition-all shadow-[0_0_20px_rgba(255,255,255,0.05)] hover:shadow-[0_0_40px_rgba(52,150,237,0.2)] active:scale-95">
               <span className="relative flex items-center gap-2">
                 <svg

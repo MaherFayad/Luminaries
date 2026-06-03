@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import BentoGlow from "../features/BentoGlow";
 import AIRobot from "../features/AIRobotBento";
 import ProjectBento from "../features/ProjectBento";
@@ -10,7 +10,7 @@ import { useTranslation } from "react-i18next";
 
 const Features = ({ isPage = false }) => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
 
   return (
     <section id="features" className="py-15 px-7 md:px-10 relative z-10">
@@ -38,10 +38,11 @@ const Features = ({ isPage = false }) => {
         )}
 
         <div className="grid grid-cols-1 md:grid-cols-12 gap-6">
-          {/* Main Feature Card */}
+          {/* Main Feature Card — Professional Services */}
           <motion.div
             {...premiumAppear}
-            className="md:col-span-12 min-h-[450px] rounded-[48px] border border-white/5 relative overflow-hidden group shadow-2xl flex flex-col justify-end"
+            onClick={() => ln("/services/professional")}
+            className="md:col-span-12 min-h-[450px] rounded-[48px] border border-white/5 relative overflow-hidden group shadow-2xl flex flex-col justify-end cursor-pointer"
           >
             <img
               src="https://images.unsplash.com/photo-1698430484131-efc9f5ccba1a?q=80&w=1400&auto=format&fit=crop"
@@ -54,11 +55,14 @@ const Features = ({ isPage = false }) => {
                 {t("features.hero_label")}
               </span>
               <h3
-                className="text-3xl md:text-5xl font-bold text-white leading-[1.1] mb-8 max-w-2xl"
+                className="text-3xl md:text-5xl font-bold text-white leading-[1.1] mb-6 max-w-2xl"
                 style={{ fontFamily: '"Sora", sans-serif' }}
               >
                 {t("features.hero_title")}
               </h3>
+              <span className="inline-flex items-center gap-2 text-white/60 text-sm font-medium group-hover:text-white transition-colors">
+                {t("features.hero_btn")} →
+              </span>
             </div>
           </motion.div>
 
@@ -87,7 +91,7 @@ const Features = ({ isPage = false }) => {
                   {t("features.bento1_body")}
                 </p>
                 <motion.button
-                  onClick={() => navigate("/services")}
+                  onClick={() => ln("/services/it-outsourcing")}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#3496ed] hover:text-white transition-all w-fit"
@@ -124,7 +128,7 @@ const Features = ({ isPage = false }) => {
                   {t("features.bento2_body")}
                 </p>
                 <motion.button
-                  onClick={() => navigate("/services")}
+                  onClick={() => ln("/services/recruitment")}
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm hover:bg-[#3496ed] hover:text-white transition-all w-fit"

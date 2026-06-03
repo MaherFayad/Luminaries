@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../hooks/useLp";
 import { useTranslation } from "react-i18next";
 import { Landmark, Zap, Building2, Monitor } from "lucide-react";
 import { premiumAppear } from "../utils/animations";
@@ -58,7 +58,7 @@ const industryDetails = [
 
 const IndustriesPage = () => {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
   const isRTL = i18n.language === "ar";
 
   return (
@@ -91,7 +91,7 @@ const IndustriesPage = () => {
               {...premiumAppear}
               transition={{ ...premiumAppear.transition, delay: i * 0.1 }}
               id={key}
-              onClick={() => navigate("/contactus")}
+              onClick={() => ln(`/industries/${key}`)}
               className={`group rounded-[32px] p-8 bg-[#070708] border border-white/10 ${color} transition-all duration-500 space-y-6 cursor-pointer`}
             >
               {/* Header */}

@@ -19,6 +19,7 @@ const SocialButton = ({ icon, label }) => (
 );
 
 const AuthPage = () => {
+  const lp = useLp();
   const [isLogin, setIsLogin] = useState(true);
 
   return (
@@ -33,7 +34,7 @@ const AuthPage = () => {
       >
         {/* Header */}
         <div className="text-center mb-8">
-          <Link to="/" className="inline-flex items-center gap-2 mb-6">
+          <Link to={lp("/")} className="inline-flex items-center gap-2 mb-6">
             <div className="w-8 h-8 rounded-lg bg-[#1a76d2] flex items-center justify-center shadow-[0_0_16px_rgba(26,118,210,0.35)]">
               <div className="w-4 h-4 bg-white rounded-sm rotate-45" />
             </div>
@@ -82,7 +83,7 @@ const AuthPage = () => {
             </div>
           )}
 
-          <Link to="/" className="w-full mt-2 block">
+          <Link to={lp("/")} className="w-full mt-2 block">
             <button className="w-full bg-[#1a76d2] hover:bg-[#3496ed] text-white font-bold text-sm py-3.5 rounded-xl transition-colors active:scale-[0.98] shadow-[0_0_20px_rgba(26,118,210,0.25)]">
               {isLogin ? "Sign In" : "Create Account"}
             </button>
@@ -128,7 +129,7 @@ const AuthPage = () => {
         </p>
 
         <p className="text-center mt-4">
-          <Link to="/contactus" className="text-[#59b4f5] text-xs hover:underline">
+          <Link to={lp("/contactus")} className="text-[#59b4f5] text-xs hover:underline">
             Looking to book a consultation? →
           </Link>
         </p>

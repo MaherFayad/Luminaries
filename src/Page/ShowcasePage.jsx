@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../hooks/useLp";
 import Showcase from "../components/Section/Showcase";
 import ExploreGrid from "../components/ExploreGrid.jsx";
 import { premiumAppear } from "../utils/animations";
@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 
 const PartnerBanner = () => {
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
 
   return (
     <section className="relative py-10 px-7 md:px-10 container mx-auto max-w-6xl z-10">
@@ -38,7 +38,7 @@ const PartnerBanner = () => {
 
         <div className="relative z-10 shrink-0">
           <button
-            onClick={() => navigate("/contactus")}
+            onClick={() => ln("/contactus")}
             className="px-8 py-4 bg-white text-black hover:bg-[#3496ed] hover:text-white rounded-xl font-bold text-sm transition-all active:scale-95 flex items-center gap-2 group/btn shadow-lg"
           >
             {t("showcase_page.banner_btn")}

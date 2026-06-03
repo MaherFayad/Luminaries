@@ -1,6 +1,6 @@
 import React, { useState, useMemo } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../hooks/useLp";
 import { useTranslation } from "react-i18next";
 
 const industriesData = [
@@ -51,7 +51,7 @@ const industriesData = [
 const ExploreGrid = () => {
   const [activeCategory, setActiveCategory] = useState("All");
   const [activeCardId, setActiveCardId]     = useState(null);
-  const navigate   = useNavigate();
+  const ln = useLn();
   const { t, i18n } = useTranslation();
   const isRTL      = i18n.language === "ar";
 
@@ -157,7 +157,7 @@ const ExploreGrid = () => {
 
                   <div className={`flex items-center gap-3 ${isRTL ? "flex-row-reverse" : ""}`}>
                     <button
-                      onClick={(e) => { e.stopPropagation(); navigate("/contactus"); }}
+                      onClick={(e) => { e.stopPropagation(); ln("/contactus"); }}
                       className="flex-1 bg-white text-black py-2.5 rounded-xl text-xs font-bold hover:bg-[#3496ed] hover:text-white transition-colors"
                     >
                       {t("explore.contact_btn")}

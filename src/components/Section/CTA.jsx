@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useMemo } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 
 const Particles = () => {
@@ -33,7 +33,7 @@ const Particles = () => {
 };
 
 const CTA = () => {
-  const navigate = useNavigate();
+  const ln = useLn();
   const { t } = useTranslation();
 
   return (
@@ -65,7 +65,7 @@ const CTA = () => {
               {t("cta.sub")}
             </p>
             <motion.button
-              onClick={() => navigate("/contactus")}
+              onClick={() => ln("/contactus")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-[#1a76d2] px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-[#e8f4fd] transition-colors flex items-center gap-2 mx-auto"

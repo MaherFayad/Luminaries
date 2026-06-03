@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 import { Users, CheckCircle2, ArrowRight } from "lucide-react";
 import { premiumAppear } from "../../utils/animations";
@@ -28,7 +28,7 @@ const models = {
 
 export default function ITOutsourcingPage() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
   const isRTL = i18n.language === "ar";
 
   const items = isRTL ? lifecycle.ar : lifecycle.en;
@@ -60,7 +60,7 @@ export default function ITOutsourcingPage() {
                 : "We provide developers, engineers, and specialized professionals who integrate directly into your internal teams. We assume full responsibility for the employment lifecycle."}
             </p>
             <button
-              onClick={() => navigate("/contactus")}
+              onClick={() => ln("/contactus")}
               className="inline-flex items-center gap-3 bg-[#1a76d2] hover:bg-[#3496ed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-[#1a76d2]/25"
             >
               {isRTL ? "احجز استشارة" : "Book a Consultation"}

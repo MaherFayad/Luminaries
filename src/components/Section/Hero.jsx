@@ -1,10 +1,10 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 
 const Hero = () => {
-  const navigate = useNavigate();
+  const ln = useLn();
   const { t } = useTranslation();
 
   return (
@@ -54,13 +54,13 @@ const Hero = () => {
           className="flex flex-wrap justify-center gap-4"
         >
           <button
-            onClick={() => navigate("/contactus")}
+            onClick={() => ln("/contactus")}
             className="h-14 w-[280px] bg-white text-black rounded-full font-bold text-sm uppercase hover:bg-[#1a76d2] hover:text-white transition-all shadow-lg"
           >
             {t("hero.cta1")}
           </button>
           <button
-            onClick={() => navigate("/services")}
+            onClick={() => ln("/services")}
             className="h-14 w-[280px] bg-transparent text-white border border-white/10 rounded-full font-bold text-sm uppercase hover:bg-white/5 transition-all flex items-center justify-center gap-2"
           >
             {t("hero.cta2")}

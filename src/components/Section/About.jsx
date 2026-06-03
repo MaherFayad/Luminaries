@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import React, { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import SeeMoreButton from "../SeeMoreButton.jsx";
 import { premiumAppear } from "../../utils/animations";
 import { useTranslation } from "react-i18next";
@@ -15,7 +15,7 @@ const sectionVariants = {
 const About = () => {
   const [activeImageId, setActiveImageId] = useState(null);
   const { t } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
 
   const handleImageTap = (id) => {
     setActiveImageId(activeImageId === id ? null : id);
@@ -152,7 +152,7 @@ const About = () => {
                 {t("about.row3_body")}
               </p>
               <button
-                onClick={() => navigate("/contactus")}
+                onClick={() => ln("/contactus")}
                 className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-[#1a76d2]/20 hover:border-[#3496ed]/30 transition-all font-medium"
               >
                 {t("about.row3_btn")}

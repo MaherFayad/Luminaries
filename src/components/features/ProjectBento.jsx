@@ -1,11 +1,11 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 import BentoGlow from "./BentoGlow";
 
 const ProjectBento = () => {
-  const navigate = useNavigate();
+  const ln = useLn();
   const { t, i18n } = useTranslation();
   const isRTL = i18n.language === "ar";
 
@@ -57,7 +57,7 @@ const ProjectBento = () => {
             </p>
 
             <motion.button
-              onClick={() => navigate("/about")}
+              onClick={() => ln("/services/mena-presence")}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm transition-all hover:bg-[#3496ed] hover:text-white shadow-lg w-fit"

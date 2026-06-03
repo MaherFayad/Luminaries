@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { useNavigate } from "react-router-dom";
+import { useLn } from "../../hooks/useLp";
 import { useTranslation } from "react-i18next";
 import { Search, ArrowRight } from "lucide-react";
 import { premiumAppear } from "../../utils/animations";
@@ -27,7 +27,7 @@ const steps = {
 
 export default function RecruitmentPage() {
   const { t, i18n } = useTranslation();
-  const navigate = useNavigate();
+  const ln = useLn();
   const isRTL = i18n.language === "ar";
   const processSteps = isRTL ? steps.ar : steps.en;
 
@@ -58,7 +58,7 @@ export default function RecruitmentPage() {
                 : "Precision hiring with a strong focus on quality, relevance, and efficiency. Our process is designed to improve hiring accuracy, reduce delays, and ensure a smooth experience."}
             </p>
             <button
-              onClick={() => navigate("/contactus")}
+              onClick={() => ln("/contactus")}
               className="inline-flex items-center gap-3 bg-[#1a76d2] hover:bg-[#3496ed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-[#1a76d2]/25"
             >
               {isRTL ? "ابدأ الآن" : "Start a Search"}
