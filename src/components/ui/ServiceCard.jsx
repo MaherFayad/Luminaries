@@ -3,7 +3,7 @@ import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
 import { premiumAppear } from "../../utils/animations";
 
-const ServiceCard = ({ icon: Icon, title, description, outcome, href = "/features" }) => (
+const ServiceCard = ({ icon: Icon, title, description, outcome, href = "/services" }) => (
   <motion.div
     {...premiumAppear}
     className="group relative rounded-[36px] p-8 md:p-10 bg-[#070708] border border-white/10 hover:border-[#3496ed]/40 transition-all duration-500 flex flex-col gap-6 hover:shadow-[0_0_40px_rgba(52,150,237,0.08)]"

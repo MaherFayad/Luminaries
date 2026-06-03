@@ -65,7 +65,7 @@ const CTA = () => {
               {t("cta.sub")}
             </p>
             <motion.button
-              onClick={() => navigate("/pricing")}
+              onClick={() => navigate("/contactus")}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               className="bg-white text-[#1a76d2] px-10 py-5 rounded-full font-bold text-lg shadow-xl hover:bg-[#e8f4fd] transition-colors flex items-center gap-2 mx-auto"

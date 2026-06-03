@@ -244,7 +244,7 @@ const Pricing = ({ isPage = false }) => {
         })}
       </motion.div>
       {!isPage && (
-        <SeeMoreButton to="/pricing" text={t("pricing.see_more")} />
+        <SeeMoreButton to="/contactus" text={t("pricing.see_more")} />
       )}
     </section>
   );

@@ -128,7 +128,7 @@ const AuthPage = () => {
         </p>
 
         <p className="text-center mt-4">
-          <Link to="/pricing" className="text-[#59b4f5] text-xs hover:underline">
+          <Link to="/contactus" className="text-[#59b4f5] text-xs hover:underline">
             Looking to book a consultation? →
           </Link>
         </p>

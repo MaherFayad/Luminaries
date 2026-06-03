@@ -59,17 +59,6 @@ const Features = ({ isPage = false }) => {
               >
                 {t("features.hero_title")}
               </h3>
-              <div
-                onClick={() => navigate("/features")}
-                className="inline-flex items-center gap-3 bg-white text-black px-8 py-4 rounded-full font-bold text-sm hover:bg-[#3496ed] hover:text-white transition-all active:scale-95 cursor-pointer"
-              >
-                {t("features.hero_btn")}
-                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
-                  <path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4Z" />
-                  <path d="M3 6h18" />
-                  <path d="M16 10a4 4 0 0 1-8 0" />
-                </svg>
-              </div>
             </div>
           </motion.div>
 
@@ -154,7 +143,7 @@ const Features = ({ isPage = false }) => {
             <ProjectBento />
           </motion.div>
         </div>
-        {!isPage && <SeeMoreButton to="/features" text={t("features.see_more")} />}
+        {!isPage && <SeeMoreButton to="/services" text={t("features.see_more")} />}
       </div>
     </section>
   );

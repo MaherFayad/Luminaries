@@ -38,7 +38,7 @@ const PartnerBanner = () => {
 
         <div className="relative z-10 shrink-0">
           <button
-            onClick={() => navigate("/pricing")}
+            onClick={() => navigate("/contactus")}
             className="px-8 py-4 bg-white text-black hover:bg-[#3496ed] hover:text-white rounded-xl font-bold text-sm transition-all active:scale-95 flex items-center gap-2 group/btn shadow-lg"
           >
             {t("showcase_page.banner_btn")}

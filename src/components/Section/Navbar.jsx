@@ -4,6 +4,8 @@ import { HashLink } from "react-router-hash-link";
 import { motion, AnimatePresence } from "framer-motion";
 import { useTranslation } from "react-i18next";
 import { setLanguage } from "../../i18n";
+import logoFull from "../../assets/Logo.svg";
+import logoIcon from "../../assets/Logo-Icon.svg";
 
 // --- ANIMATION VARIANTS ---
 const menuVariants = {
@@ -57,12 +59,10 @@ const Navbar = () => {
   const checkIsActive = (path) => location.pathname === path;
 
   const navLinks = [
-    { name: t("nav.home"),     path: "/" },
-    { name: t("nav.services"), path: "/features" },
-    { name: t("nav.about"),    path: "/about" },
-    { name: t("nav.clients"),  path: "/testimonials" },
-    { name: t("nav.pricing"),  path: "/pricing" },
-    { name: t("nav.contact"),  path: "/pricing" },
+    { name: t("nav.home"),       path: "/" },
+    { name: t("nav.services"),   path: "/services" },
+    { name: t("nav.industries"), path: "/industries" },
+    { name: t("nav.about"),      path: "/about" },
   ];
 
   return (
@@ -76,13 +76,12 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-6 md:px-10 flex items-center justify-between">
         {/* BRANDING */}
         <div className="flex-1">
-          <Link to="/" className="inline-block group relative z-[1001]">
-            <span
-              className="text-2xl font-[900] tracking-tighter text-white group-hover:text-[#59b4f5] transition-colors"
-              style={{ fontFamily: '"Sora", sans-serif' }}
-            >
-              LUMINARIES HUB
-            </span>
+          <Link to="/" className="inline-flex items-center group relative z-[1001]">
+            <img
+              src={logoFull}
+              alt="Luminaries Hub"
+              className="h-6 w-auto opacity-90 group-hover:opacity-100 transition-opacity"
+            />
           </Link>
         </div>
 
@@ -107,7 +106,7 @@ const Navbar = () => {
         {/* DESKTOP CTA */}
         <div className="hidden md:flex items-center justify-end flex-1 gap-3">
           <LangToggle />
-          <Link to="/pricing">
+          <Link to="/contactus">
             <button className="px-6 py-2.5 bg-[#1a76d2] text-white rounded-xl text-[12px] font-bold uppercase tracking-widest hover:bg-[#3496ed] transition-all shadow-lg shadow-[#1a76d2]/20">
               {t("nav.cta")}
             </button>
@@ -159,7 +158,7 @@ const Navbar = () => {
 
               {/* MOBILE CTA */}
               <motion.div variants={itemVariants} className="mt-4 pt-6 border-t border-white/10">
-                <Link to="/pricing" onClick={() => setIsOpen(false)} className="block w-full">
+                <Link to="/contactus" onClick={() => setIsOpen(false)} className="block w-full">
                   <button className="w-full py-4 bg-[#1a76d2] text-white rounded-xl text-[13px] font-bold uppercase tracking-widest hover:bg-[#3496ed] transition-colors">
                     {t("nav.cta")}
                   </button>

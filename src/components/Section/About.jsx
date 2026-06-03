@@ -152,7 +152,7 @@ const About = () => {
                 {t("about.row3_body")}
               </p>
               <button
-                onClick={() => navigate("/pricing")}
+                onClick={() => navigate("/contactus")}
                 className="px-6 py-3 bg-white/5 border border-white/10 text-white rounded-xl hover:bg-[#1a76d2]/20 hover:border-[#3496ed]/30 transition-all font-medium"
               >
                 {t("about.row3_btn")}

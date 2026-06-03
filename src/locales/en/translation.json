@@ -167,13 +167,33 @@
     "company_1": "About Us",
     "company_2": "Clients",
     "company_3": "Contact",
+    "partner_tagline": "Your Partner in Scaling Talent, Performance, and Growth",
     "copyright": "© 2026 LUMINARIES HUB.",
     "social_1": "LinkedIn",
     "social_2": "Email",
     "social_3": "MENA"
   },
+  "industries": {
+    "key_capabilities": "Key Capabilities",
+    "see_more": "Explore All Industries",
+    "eyebrow": "Industries We Serve",
+    "heading": "Tailored for Technology-Driven Sectors",
+    "subheading": "Our services are designed for the needs of high-demand industries across the MENA region.",
+    "items": {
+      "banking":    { "title": "Banking & Financial Services", "desc": "Where compliance, reliability, and technical precision are critical." },
+      "fintech":    { "title": "Fintech",                      "desc": "Where speed, agility, and high-quality talent are essential for growth." },
+      "government": { "title": "Government & Enterprise",      "desc": "Where structured delivery and operational reliability are essential." },
+      "software":   { "title": "Software & Technology",        "desc": "Where continuous product development and technical scalability are key." }
+    }
+  },
   "logos": {
     "label": "Trusted by organizations across the MENA region"
+  },
+  "projectBento": {
+    "label": "Regional Presence",
+    "title": "Deep roots in Egypt & Saudi Arabia.",
+    "body": "Strong familiarity with local compliance environments, talent landscapes, and business cultures across both markets — giving every engagement a regional edge.",
+    "btn": "Our Regional Presence"
   },
   "showcase": {
     "eyebrow": "How We Deliver",
