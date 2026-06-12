@@ -187,61 +187,6 @@ const AboutPage = () => {
           </div>
         </div>
 
-        {/* TEAM */}
-        <div className="py-24 px-7 md:px-10 container mx-auto max-w-6xl border-t border-white/5">
-          <div className="text-center mb-16">
-            <motion.div {...premiumAppear}>
-              <h2
-                className="text-3xl md:text-5xl font-bold text-white mb-6 tracking-tight"
-                style={{ fontFamily: '"Sora", sans-serif' }}
-              >
-                {t("about_page.team_heading")}{" "}
-                <span className="text-[#59b4f5]">{t("about_page.team_accent")}</span>
-              </h2>
-              <p className="text-slate-400 text-lg max-w-2xl mx-auto">{t("about_page.team_sub")}</p>
-            </motion.div>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {teamMembers.map((member, index) => (
-              <motion.div
-                key={index}
-                {...premiumAppear}
-                transition={{ duration: 0.5, ease: "easeOut", delay: index * 0.15 }}
-                className="group relative rounded-[40px] border border-white/10 bg-[#070708] p-4 hover:border-[#3496ed]/30 hover:bg-white/[0.02] transition-colors duration-500"
-              >
-                <div className="w-full aspect-[4/4] rounded-[32px] overflow-hidden relative mb-6">
-                  <img
-                    src={member.image}
-                    alt={member.name}
-                    className="absolute inset-0 w-full h-full object-cover object-top grayscale opacity-80 group-hover:grayscale-0 group-hover:opacity-100 group-hover:scale-105 transition-all duration-700 ease-in-out"
-                    loading="lazy"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-[#070708] via-transparent to-transparent opacity-60" />
-                </div>
-
-                <div className="px-4 pb-4">
-                  <h3 className="text-2xl font-bold text-white mb-1 tracking-tight" style={{ fontFamily: '"Sora", sans-serif' }}>
-                    {member.name}
-                  </h3>
-                  <p className="text-[#59b4f5] text-sm font-medium uppercase tracking-widest mb-4">
-                    {member.role}
-                  </p>
-                  <p className="text-slate-400 text-sm leading-relaxed mb-6">{member.bio}</p>
-
-                  <div className="flex items-center gap-4">
-                    <a href={member.socials.linkedin} className="text-slate-500 hover:text-white transition-colors" aria-label={`${member.name} LinkedIn`}>
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                        <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-
         <div className="pb-10"><CTA /></div>
       </div>
     </div>

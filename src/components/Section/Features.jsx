@@ -142,10 +142,6 @@ const Features = ({ isPage = false }) => {
             </BentoGlow>
           </motion.div>
 
-          {/* Project Bento */}
-          <motion.div {...premiumAppear} className="md:col-span-12">
-            <ProjectBento />
-          </motion.div>
         </div>
         {!isPage && <SeeMoreButton to="/services" text={t("features.see_more")} />}
       </div>

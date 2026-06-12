@@ -78,6 +78,7 @@ const Navbar = () => {
     { name: t("nav.services"),   path: "/services" },
     { name: t("nav.industries"), path: "/industries" },
     { name: t("nav.about"),      path: "/about" },
+    { name: t("nav.contact"),    path: "/contactus" },
   ];
 
   return (
@@ -120,7 +121,8 @@ const Navbar = () => {
 
         {/* DESKTOP CTA */}
         <div className="hidden md:flex items-center justify-end flex-1 gap-3">
-          <LangToggle />
+          {/* LangToggle hidden until Arabic content is ready */}
+          {/* <LangToggle /> */}
           <Link to={lp("/contactus")}>
             <button className="px-6 py-2.5 bg-[#1a76d2] text-white rounded-xl text-[12px] font-bold uppercase tracking-widest hover:bg-[#3496ed] transition-all shadow-lg shadow-[#1a76d2]/20">
               {t("nav.cta")}
@@ -167,9 +169,10 @@ const Navbar = () => {
                 </motion.div>
               ))}
 
-              <motion.div variants={itemVariants} className="mt-3 px-4">
+              {/* LangToggle hidden until Arabic content is ready */}
+              {/* <motion.div variants={itemVariants} className="mt-3 px-4">
                 <LangToggle />
-              </motion.div>
+              </motion.div> */}
 
               {/* MOBILE CTA */}
               <motion.div variants={itemVariants} className="mt-4 pt-6 border-t border-white/10">

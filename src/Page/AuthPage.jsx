@@ -130,7 +130,7 @@ const AuthPage = () => {
 
         <p className="text-center mt-4">
           <Link to={lp("/contactus")} className="text-[#59b4f5] text-xs hover:underline">
-            Looking to book a consultation? →
+            Looking to submit a service request? →
           </Link>
         </p>
       </motion.div>

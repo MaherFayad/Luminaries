@@ -26,7 +26,7 @@ const content = {
     ],
     outcomeTitle: "The Regional Advantage",
     outcome: "Faster onboarding, lower attrition, stronger cultural fit, and zero timezone friction — because your team is built from within the region.",
-    btn: "Book a Consultation",
+    btn: "Service Request",
   },
   ar: {
     eyebrow: "الحضور الإقليمي في الشرق الأوسط وشمال أفريقيا",
@@ -47,7 +47,7 @@ const content = {
     ],
     outcomeTitle: "الميزة الإقليمية",
     outcome: "إعداد أسرع، ومعدل استبقاء أعلى، وتوافق ثقافي أقوى، وصفر احتكاك في المناطق الزمنية — لأن فريقك مبني من داخل المنطقة.",
-    btn: "احجز استشارة",
+    btn: "طلب خدمة",
   },
 };
 

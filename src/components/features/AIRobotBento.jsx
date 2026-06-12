@@ -64,7 +64,7 @@ const AIRobot = () => {
               exit={{ opacity: 0, scale: 0.5, y: 20 }}
               className="absolute left-1/2 -translate-x-1/2 bg-indigo-600 text-white px-6 py-2.5 rounded-2xl font-bold text-xs whitespace-nowrap shadow-[0_0_30px_rgba(99,102,241,0.6)] z-50 border border-indigo-400/40"
             >
-              "System Online. Welcome to Lumina!"
+              "System Online. Welcome to Luminaries!"
               <div className="absolute bottom-[-5px] left-1/2 -translate-x-1/2 w-4 h-4 bg-indigo-600 rotate-45" />
             </motion.div>
           )}

@@ -98,15 +98,6 @@ export default function BankingPage() {
         </div>
       </section>
 
-      <section className="py-20 px-7 md:px-10 max-w-6xl mx-auto border-t border-white/5">
-        <motion.div {...premiumAppear}>
-          <span className="text-[#f59e0b] uppercase text-xs tracking-[0.4em] font-bold mb-4 block">{c.caseTitle}</span>
-          <div className="rounded-[40px] bg-[#070708] border border-[#f59e0b]/20 p-10 md:p-14">
-            <div className="text-[#fbbf24] font-bold text-xl mb-4">{c.caseLabel}</div>
-            <p className="text-slate-300 text-lg leading-relaxed">{c.caseText}</p>
-          </div>
-        </motion.div>
-      </section>
       <CTA />
     </div>
   );

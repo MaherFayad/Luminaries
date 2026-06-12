@@ -3,11 +3,16 @@ import { Routes, Route, Navigate, useLocation } from "react-router-dom";
 import LangWrapper from "./components/LangWrapper.jsx";
 import NotFoundPage from "./Page/NotFoundPage.jsx";
 
-// Detect saved language preference and redirect / to /en or /ar
+// Always redirect to English until Arabic content is ready
 const RootRedirect = () => {
-  const saved = localStorage.getItem("i18nextLng");
-  const lang = saved === "ar" ? "ar" : "en";
-  return <Navigate to={`/${lang}`} replace />;
+  return <Navigate to="/en" replace />;
+};
+
+// Redirect /ar/* paths to /en/* equivalents
+const ArRedirect = () => {
+  const { pathname } = useLocation();
+  const newPath = pathname.replace(/^\/ar/, "/en");
+  return <Navigate to={newPath} replace />;
 };
 
 // Redirect old paths (without lang prefix) to /en equivalent
@@ -25,7 +30,8 @@ function App() {
       <Routes>
         <Route path="/"    element={<RootRedirect />} />
         <Route path="/en/*" element={<LangWrapper lang="en" />} />
-        <Route path="/ar/*" element={<LangWrapper lang="ar" />} />
+        {/* Arabic route preserved but redirects to English until content is ready */}
+        <Route path="/ar/*" element={<ArRedirect />} />
         <Route path="*"    element={<LangRedirect />} />
       </Routes>
     </div>

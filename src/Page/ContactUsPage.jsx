@@ -1,38 +1,39 @@
-import React from "react";
+import React, { useRef, useState } from "react";
 import { motion } from "framer-motion";
+import emailjs from "@emailjs/browser";
 import CTA from "../components/Section/CTA";
 import { premiumAppear } from "../utils/animations";
 import { useTranslation } from "react-i18next";
 
-const FormInput = ({ type = "text", placeholder }) => (
-  <input
-    type={type}
-    placeholder={placeholder}
-    required
-    className="w-full bg-[#111114] border border-white/10 rounded-lg px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#3496ed] focus:bg-[#1a1a1f] transition-colors"
-  />
-);
-
-const FormTextarea = ({ placeholder, rows = 5 }) => (
-  <textarea
-    placeholder={placeholder}
-    rows={rows}
-    required
-    className="w-full bg-[#111114] border border-white/10 rounded-lg px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#3496ed] focus:bg-[#1a1a1f] transition-colors resize-none"
-  />
-);
+const inputClass =
+  "w-full bg-[#111114] border border-white/10 rounded-lg px-5 py-4 text-white placeholder-slate-500 focus:outline-none focus:border-[#3496ed] focus:bg-[#1a1a1f] transition-colors";
 
 const ContactUsPage = () => {
   const { t } = useTranslation();
+  const formRef = useRef();
+  const [status, setStatus] = useState("idle"); // idle | sending | sent | error
 
   const handleContactSubmit = (e) => {
     e.preventDefault();
+    setStatus("sending");
+
+    emailjs
+      .sendForm(
+        "service_0qkob2y",
+        "template_9xbcja4",
+        formRef.current,
+        "6Iz6j9YWRI_DaJ-s6"
+      )
+      .then(
+        () => setStatus("sent"),
+        () => setStatus("error")
+      );
   };
 
   const whyItems = [
     {
       title: t("pricing_page.w1_title"),
-      desc:  t("pricing_page.w1_desc"),
+      desc: t("pricing_page.w1_desc"),
       hoverBorderClass: "hover:border-[#3496ed]/30",
       iconBgClass: "bg-[#1a76d2]/10",
       iconColor: "text-[#59b4f5]",
@@ -44,7 +45,7 @@ const ContactUsPage = () => {
     },
     {
       title: t("pricing_page.w2_title"),
-      desc:  t("pricing_page.w2_desc"),
+      desc: t("pricing_page.w2_desc"),
       hoverBorderClass: "hover:border-[#f59e0b]/30",
       iconBgClass: "bg-[#f59e0b]/10",
       iconColor: "text-[#fbbf24]",
@@ -56,7 +57,7 @@ const ContactUsPage = () => {
     },
     {
       title: t("pricing_page.w3_title"),
-      desc:  t("pricing_page.w3_desc"),
+      desc: t("pricing_page.w3_desc"),
       hoverBorderClass: "hover:border-[#3496ed]/30",
       iconBgClass: "bg-[#3496ed]/10",
       iconColor: "text-[#3496ed]",
@@ -133,19 +134,78 @@ const ContactUsPage = () => {
               </p>
             </div>
 
-            <form onSubmit={handleContactSubmit} className="w-full max-w-2xl flex flex-col gap-4">
-              <div className="flex flex-col sm:flex-row gap-4">
-                <FormInput type="text" placeholder={t("pricing_page.contact_name_ph")} />
-                <FormInput type="email" placeholder={t("pricing_page.contact_email_ph")} />
+            {status === "sent" ? (
+              <div className="w-full max-w-2xl rounded-[32px] bg-[#070708] border border-[#3496ed]/30 p-12 text-center space-y-4">
+                <div className="w-16 h-16 rounded-full bg-[#1a76d2]/15 border border-[#3496ed]/30 flex items-center justify-center mx-auto">
+                  <svg className="w-7 h-7 text-[#59b4f5]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M5 13l4 4L19 7" />
+                  </svg>
+                </div>
+                <h3
+                  className="text-white font-bold text-2xl"
+                  style={{ fontFamily: '"Sora", sans-serif' }}
+                >
+                  Message Sent!
+                </h3>
+                <p className="text-slate-400">We'll be in touch within one business day.</p>
               </div>
-              <FormTextarea placeholder={t("pricing_page.contact_msg_ph")} rows={5} />
-              <button
-                type="submit"
-                className="w-full bg-[#1a76d2] text-white font-bold text-base py-4 rounded-lg hover:bg-[#3496ed] transition-colors active:scale-[0.98] mt-2"
-              >
-                {t("pricing_page.contact_btn")}
-              </button>
-            </form>
+            ) : (
+              <form ref={formRef} onSubmit={handleContactSubmit} className="w-full max-w-2xl flex flex-col gap-4">
+                <div className="flex flex-col sm:flex-row gap-4">
+                  <input
+                    type="text"
+                    name="name"
+                    placeholder={t("pricing_page.contact_name_ph")}
+                    required
+                    className={inputClass}
+                  />
+                  <input
+                    type="email"
+                    name="email"
+                    placeholder={t("pricing_page.contact_email_ph")}
+                    required
+                    className={inputClass}
+                  />
+                </div>
+                <input
+                  type="tel"
+                  name="phone"
+                  placeholder="Phone (optional)"
+                  className={inputClass}
+                />
+                <textarea
+                  name="message"
+                  placeholder={t("pricing_page.contact_msg_ph")}
+                  rows={5}
+                  required
+                  className={`${inputClass} resize-none`}
+                />
+
+                {status === "error" && (
+                  <p className="text-red-400 text-sm text-center">
+                    Something went wrong. Please try again or email us directly.
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={status === "sending"}
+                  className="w-full bg-[#1a76d2] text-white font-bold text-base py-4 rounded-lg hover:bg-[#3496ed] transition-colors active:scale-[0.98] mt-2 disabled:opacity-60 disabled:cursor-not-allowed flex items-center justify-center gap-2"
+                >
+                  {status === "sending" ? (
+                    <>
+                      <svg className="w-5 h-5 animate-spin" fill="none" viewBox="0 0 24 24">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4z" />
+                      </svg>
+                      Sending...
+                    </>
+                  ) : (
+                    t("pricing_page.contact_btn")
+                  )}
+                </button>
+              </form>
+            )}
           </motion.div>
         </section>
 

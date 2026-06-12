@@ -7,19 +7,19 @@
     "clients": "Clients",
     "pricing": "Engagement",
     "contact": "Contact",
-    "cta": "Book a Consultation"
+    "cta": "Service Request"
   },
   "hero": {
-    "badge": "MENA's IT Talent Partner",
-    "line1": "Talent You Can Trust.",
-    "line2": "Technology That Performs.",
+    "badge": "Strategic Technology Partner",
+    "line1": "Trusted Talent.",
+    "line2": "Technology Performs.",
     "sub": "Luminaries Hub is a strategic technology partner helping organizations across the MENA region scale efficiently through high-quality technical talent and reliable software services.",
     "placeholder_1": "Find senior React developers in Saudi Arabia...",
     "placeholder_2": "Scale a backend engineering team in Cairo...",
     "placeholder_3": "Outsource QA testing for your fintech product...",
     "placeholder_4": "Build a dedicated DevOps team in 2 weeks...",
     "btn_search": "Search",
-    "cta1": "Book a Consultation",
+    "cta1": "Service Request",
     "cta2": "Our Services"
   },
   "about": {
@@ -89,7 +89,7 @@
     "tier2_price_a": "Monthly",
     "tier2_price_b": "Monthly",
     "tier2_badge": "Most Requested",
-    "tier2_btn": "Book a Consultation",
+    "tier2_btn": "Service Request",
     "tier2_f1": "Dedicated full-time engineers",
     "tier2_f2": "Full payroll & insurance management",
     "tier2_f3": "HR & compliance administration",
@@ -153,7 +153,7 @@
   "cta": {
     "heading": "Ready to Scale Your Team?",
     "sub": "Partner with Luminaries Hub to access pre-vetted technical talent and build your team with confidence across the MENA region.",
-    "btn": "Book a Free Consultation"
+    "btn": "Submit a Service Request"
   },
   "footer": {
     "tagline": "Strategic technology partner for organizations across the MENA region.",
@@ -184,10 +184,22 @@
     "heading": "Tailored for Technology-Driven Sectors",
     "subheading": "Our services are designed for the needs of high-demand industries across the MENA region.",
     "items": {
-      "banking":    { "title": "Banking & Financial Services", "desc": "Where compliance, reliability, and technical precision are critical." },
-      "fintech":    { "title": "Fintech",                      "desc": "Where speed, agility, and high-quality talent are essential for growth." },
-      "government": { "title": "Government & Enterprise",      "desc": "Where structured delivery and operational reliability are essential." },
-      "software":   { "title": "Software & Technology",        "desc": "Where continuous product development and technical scalability are key." }
+      "banking": {
+        "title": "Banking & Financial Services",
+        "desc": "Where compliance, reliability, and technical precision are critical."
+      },
+      "fintech": {
+        "title": "Fintech",
+        "desc": "Where speed, agility, and high-quality talent are essential for growth."
+      },
+      "government": {
+        "title": "Government & Enterprise",
+        "desc": "Where structured delivery and operational reliability are essential."
+      },
+      "software": {
+        "title": "Software & Technology",
+        "desc": "Where continuous product development and technical scalability are key."
+      }
     }
   },
   "logos": {
@@ -305,9 +317,9 @@
     "contact_heading": "Let's Build Your Team",
     "contact_sub": "Tell us about your hiring needs and we'll get back to you within one business day.",
     "contact_country": "Offices",
-    "contact_country_val": "Cairo, Egypt · Riyadh, Saudi Arabia",
+    "contact_country_val": "5th Settlement, New Cairo, Egypt",
     "contact_email": "Email",
-    "contact_email_val": "info@luminarieshub.com",
+    "contact_email_val": "info@luminarieshub.net",
     "contact_name_ph": "Your Name",
     "contact_email_ph": "Email Address",
     "contact_msg_ph": "Tell us about your requirements...",
@@ -319,11 +331,23 @@
     "h1_accent": "Enterprises.",
     "hero_sub": "Organizations across Egypt, Saudi Arabia, and the Gulf rely on Luminaries Hub to scale their technical teams with confidence.",
     "marquee_heading": "And many more across the MENA region",
-    "mini_1_name": "Rania K.", "mini_1_role": "HR Director", "mini_1_text": "Best technical hiring experience we've had in 5 years.",
-    "mini_2_name": "Faris L.", "mini_2_role": "VP Engineering", "mini_2_text": "Candidates were genuinely pre-screened. Zero wasted interviews.",
-    "mini_3_name": "Dina R.", "mini_3_role": "CTO", "mini_3_text": "Scaled our team from 8 to 30 engineers in one quarter.",
-    "mini_4_name": "Omar W.", "mini_4_role": "Head of Product", "mini_4_text": "Outsourcing with Luminaries means no HR headaches at all.",
-    "mini_5_name": "Layla G.", "mini_5_role": "CEO", "mini_5_text": "The regional market knowledge is what sets them apart.",
-    "mini_6_name": "Sami F.", "mini_6_role": "Engineering Manager", "mini_6_text": "5-day shortlist is real. We hired 3 engineers last month."
+    "mini_1_name": "Rania K.",
+    "mini_1_role": "HR Director",
+    "mini_1_text": "Best technical hiring experience we've had in 5 years.",
+    "mini_2_name": "Faris L.",
+    "mini_2_role": "VP Engineering",
+    "mini_2_text": "Candidates were genuinely pre-screened. Zero wasted interviews.",
+    "mini_3_name": "Dina R.",
+    "mini_3_role": "CTO",
+    "mini_3_text": "Scaled our team from 8 to 30 engineers in one quarter.",
+    "mini_4_name": "Omar W.",
+    "mini_4_role": "Head of Product",
+    "mini_4_text": "Outsourcing with Luminaries means no HR headaches at all.",
+    "mini_5_name": "Layla G.",
+    "mini_5_role": "CEO",
+    "mini_5_text": "The regional market knowledge is what sets them apart.",
+    "mini_6_name": "Sami F.",
+    "mini_6_role": "Engineering Manager",
+    "mini_6_text": "5-day shortlist is real. We hired 3 engineers last month."
   }
 }

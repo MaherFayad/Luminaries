@@ -63,7 +63,7 @@ export default function ITOutsourcingPage() {
               onClick={() => ln("/contactus")}
               className="inline-flex items-center gap-3 bg-[#1a76d2] hover:bg-[#3496ed] text-white px-8 py-4 rounded-full font-bold text-sm uppercase tracking-wider transition-all shadow-lg shadow-[#1a76d2]/25"
             >
-              {isRTL ? "احجز استشارة" : "Book a Consultation"}
+              {isRTL ? "طلب خدمة" : "Service Request"}
               <ArrowRight className="w-4 h-4" style={{ transform: isRTL ? "scaleX(-1)" : "scaleX(1)" }} />
             </button>
           </motion.div>

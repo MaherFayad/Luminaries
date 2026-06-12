@@ -129,7 +129,7 @@ const IndustriesPage = () => {
 
               {/* CTA hint */}
               <p className={`text-[11px] font-semibold uppercase tracking-wider ${iconColor} opacity-0 group-hover:opacity-100 transition-opacity`}>
-                {isRTL ? "احجز استشارة ←" : "Book a Consultation →"}
+                {isRTL ? "طلب خدمة ←" : "Service Request →"}
               </p>
             </motion.div>
           ))}
