@@ -13,7 +13,6 @@ const Footer = () => {
       { name: t("footer.explore_1"), path: lp("/services/it-outsourcing") },
       { name: t("footer.explore_2"), path: lp("/services/recruitment") },
       { name: t("footer.explore_3"), path: lp("/services/professional") },
-      { name: t("footer.explore_4"), path: lp("/services/mena-presence") },
     ],
     [t("footer.product_title")]: [
       { name: t("footer.product_1"), path: lp("/industries/banking") },

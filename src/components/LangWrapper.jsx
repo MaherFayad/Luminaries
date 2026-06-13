@@ -16,7 +16,6 @@ import AuthPage from "../Page/AuthPage.jsx";
 import ITOutsourcingPage from "../Page/services/ITOutsourcingPage.jsx";
 import RecruitmentPage from "../Page/services/RecruitmentPage.jsx";
 import ProfessionalServicesPage from "../Page/services/ProfessionalServicesPage.jsx";
-import MENAPresencePage from "../Page/services/MENAPresencePage.jsx";
 import BankingPage from "../Page/industries/BankingPage.jsx";
 import FintechPage from "../Page/industries/FintechPage.jsx";
 import GovernmentPage from "../Page/industries/GovernmentPage.jsx";
@@ -58,7 +57,6 @@ const LangWrapper = ({ lang }) => {
           <Route path="services/it-outsourcing" element={<ITOutsourcingPage />} />
           <Route path="services/recruitment" element={<RecruitmentPage />} />
           <Route path="services/professional" element={<ProfessionalServicesPage />} />
-          <Route path="services/mena-presence" element={<MENAPresencePage />} />
           <Route path="showcase" element={<ShowcasePage />} />
           <Route path="industries" element={<IndustriesPage />} />
           <Route path="industries/banking" element={<BankingPage />} />

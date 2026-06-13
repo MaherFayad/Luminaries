@@ -24,7 +24,6 @@ const ROUTES = [
   "/services/it-outsourcing",
   "/services/recruitment",
   "/services/professional",
-  "/services/mena-presence",
   "/industries",
   "/industries/banking",
   "/industries/fintech",

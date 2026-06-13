@@ -57,7 +57,7 @@ const ProjectBento = () => {
             </p>
 
             <motion.button
-              onClick={() => ln("/services/mena-presence")}
+              onClick={() => ln("/contactus")}
               whileHover={{ scale: 1.02 }}
               whileTap={{ scale: 0.98 }}
               className="inline-flex items-center gap-3 bg-white text-black px-6 py-3 rounded-xl font-bold text-sm transition-all hover:bg-[#3496ed] hover:text-white shadow-lg w-fit"
