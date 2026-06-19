@@ -19,10 +19,10 @@ const ContactUsPage = () => {
 
     emailjs
       .sendForm(
-        "service_0qkob2y",
-        "template_9xbcja4",
+        "service_2btuobi",
+        "template_t4n7e7z",
         formRef.current,
-        "6Iz6j9YWRI_DaJ-s6"
+        "cJezY-I7q0Nm0CIj5"
       )
       .then(
         () => setStatus("sent"),
